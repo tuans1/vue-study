@@ -9,6 +9,7 @@
         :maxLength="field.maxLength"
         :placeholder="field.placeholder"
         :options="field.options"
+        :disabled="field.disabled"
       >
       </component>
     </div>

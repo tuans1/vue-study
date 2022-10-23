@@ -1,22 +1,30 @@
 <template>
   <div>
-    <BaseForm :formField="formFieldInformation" />
+    <!-- <BaseForm :formField="formFieldInformation" /> -->
+    <ValidationProvider rules="required" v-slot="v">
+      <input v-model="value" name="Value" type="text" />
+      <span>{{ v.errors[0] }}</span>
+      <div>{{ v }}</div>
+    </ValidationProvider>
   </div>
 </template>
 <script>
 import BaseForm from "@/components/ui/BaseForm.vue";
+
 export default {
   components: { BaseForm },
   data() {
     return {
+      value: 1,
       formFieldInformation: {
         name: {
           label: "Name",
           component: "BaseInput",
           className: "col-span-6 mb-4",
           placeholder: "Input Name",
-          value: "",
-          maxLength: "10",
+          value: "1",
+          disabled: false,
+          rules: "max:10|min:2|required",
         },
         description: {
           label: "Description",
@@ -24,7 +32,8 @@ export default {
           className: "col-span-6 mb-4",
           placeholder: "Input Address",
           value: "",
-          maxLength: "",
+          disabled: false,
+          rules: "",
         },
         address: {
           label: "Address",
@@ -32,7 +41,8 @@ export default {
           className: "col-span-6 mb-4",
           placeholder: "Input Address",
           value: "",
-          maxLength: "10",
+          disabled: true,
+          rules: "max:10|min:2|required",
           options: [],
         },
         gender: {
@@ -41,7 +51,8 @@ export default {
           className: "col-span-6 mb-4",
           placeholder: "Select Gender",
           value: "",
-          maxLength: "10",
+          disabled: false,
+          rules: "required",
           options: [
             { value: 1, label: "Male" },
             { value: 2, label: "Female" },

@@ -1,5 +1,5 @@
 <template>
-  <el-select v-model="currentValue" :placeholder="placeholder">
+  <el-select v-model="currentValue" :disabled="disabled" :placeholder="placeholder">
     <el-option
       v-for="item in options"
       :key="item.value"

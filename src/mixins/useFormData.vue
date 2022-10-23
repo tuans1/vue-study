@@ -17,9 +17,10 @@ export default {
       type: String || Number,
       default: "",
     },
+    disabled: Boolean,
     options: {
       type: Array,
-      default: [],
+      default: () => [],
     },
   },
   computed: {

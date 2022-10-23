@@ -5,11 +5,14 @@
       :placeholder="placeholder"
       v-model="currentValue"
       :maxlength="maxLength"
+      :disabled="disabled"
     >
     </el-input>
     <div class="flex justify-between">
       <div class="" v-if="currentValue">Name is required</div>
-      <div class="" v-if="maxLength">{{ currentValue.length }} / {{ maxLength }}</div>
+      <div class="" v-if="maxLength">
+        {{ currentValue.length }} / {{ maxLength }}
+      </div>
     </div>
   </div>
 </template>
