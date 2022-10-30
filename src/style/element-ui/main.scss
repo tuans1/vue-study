@@ -1,0 +1,12 @@
+@import url('./tabel.scss');
+
+
+
+.main {
+
+    p,
+    div,
+    span {
+        word-break: normal !important;
+    }
+}

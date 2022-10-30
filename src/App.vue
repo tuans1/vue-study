@@ -1,17 +1,17 @@
 <template>
-  <div id="app">
-    <CustomerAdd />
+  <div class="main">
+    <CustomerList />
+    <!-- <router-link to="/customer/add">Create</router-link> -->
+    <!-- <router-link :to="{ name: 'CustomerAdd' }">Home</router-link> -->
+    <!-- <router-view></router-view> -->
   </div>
 </template>
 
 <script>
-import CustomerAdd from "./pages/customer/CustomerAdd.vue";
-
+import CustomerList from "./pages/customer/CustomerList.vue";
 export default {
   name: "App",
-  components: {
-    CustomerAdd,
-  },
+  components: { CustomerList },
 };
 </script>
 
